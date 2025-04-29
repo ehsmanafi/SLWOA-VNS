@@ -31,7 +31,7 @@ Algo_name = 'SLWOA_VNS_EXPECTED'
 
 print("Algo_name:  ",Algo_name)
 
-iif = 'L08'
+iif = 'M01'
 run_id = 10
 tic = time.time()
 Machine,Configuration,Job,R,RecChange,W,TRT = load_from_json("Problem_instances/Problem_Instance_{}.json".format(iif))
