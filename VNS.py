@@ -6,10 +6,8 @@ import random
 from Plot import Plot
 
 
-def local_search_population(Positions, fobj, step_size=0.01, attempts=1):
+def HNS(Positions, fobj, step_size=0.01, attempts=1):
     """
-    Vectorized local search applied to each solution (row) in Positions.
-
     Parameters:
         Positions: ndarray (n_agents, dim), values in [0, 1]
         fobj: objective function, takes 1D array and returns scalar
@@ -206,7 +204,7 @@ def variable_neighborhood_search_population(Positions, fobj, k_max=3, step_size=
         shaken = top_20_positions.copy()
 
         # Apply local search to the shaken solutions (VNS)
-        local_searched = local_search_population(shaken, fobj, step_size=step_size, attempts=1)
+        local_searched = HNS(shaken, fobj, step_size=step_size, attempts=1)
 
         # Evaluate fitness of the local searched solutions
         candidate_scores = np.array([fobj(candidate) for candidate in local_searched])
